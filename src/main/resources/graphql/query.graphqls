@@ -1,0 +1,4 @@
+type Query {
+    findAllBooks: [Book]
+    findBookById(id: ID): Book
+}
