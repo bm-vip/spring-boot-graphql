@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @Component
 public class GraphqlExceptionHandler {
-    @ExceptionHandler(GraphQLException.class)
-    public GraphqlErrorException handler(GraphQLException e, HttpServletRequest request){
-        return new  GraphqlErrorException(new GraphqlErrorException.Builder());
-    }
+//    @ExceptionHandler(GraphQLException.class)
+//    public GraphqlErrorException handler(GraphQLException e, HttpServletRequest request){
+//        return new GraphqlErrorException(new GraphqlErrorException.Builder());
+//    }
 }
