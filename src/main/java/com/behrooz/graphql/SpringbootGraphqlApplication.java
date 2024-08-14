@@ -30,15 +30,19 @@ public class SpringbootGraphqlApplication {
         }
         String port = environment.containsProperty("server.port")? environment.getProperty("server.port") : "8080";
         String appName = environment.containsProperty("spring.application.name")? environment.getProperty("spring.application.name") : getClass().getSimpleName();
-        String url = protocol.concat("://localhost:").concat(port).concat("/graphiql");
+        String url = protocol.concat("://localhost:").concat(port);
 
         log.info("\n----------------------------------------------------------\n\t"
-                        + "Application '{}' is running! Access URLs:\n\t" + "Local: \t\t{}\n\t"
-                        + "External: \t{}://{}:{}\n\t"
-                        + "Profile(s): \t{}\n----------------------------------------------------------",
-                appName, url, protocol,
-                InetAddress.getLocalHost().getHostAddress(), port, environment.getActiveProfiles());
-
+                        + "Application '{}' is running! Access URLs:\n\t"
+                        + "Graphql console : \t{}/graphiql\n\t"
+                        + "H2 console : \t\t{}/h2-console\n\t"
+                        + "External: \t\t\t{}://{}:{}\n\t"
+                        + "Profile(s): \t\t{}\n----------------------------------------------------------",
+                appName,
+                url,
+                url,
+                protocol, InetAddress.getLocalHost().getHostAddress(), port,
+                environment.getActiveProfiles());
 
         /*if (Desktop.isDesktopSupported()) {
             Desktop desktop = Desktop.getDesktop();

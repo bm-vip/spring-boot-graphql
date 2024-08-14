@@ -11,7 +11,8 @@ public class Book {
     @SequenceGenerator(name = "seq_book", sequenceName = "seq_book", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_book")
     private Long id;
-    private String name;
+    private String title;
+    private String isbn;
     private Integer pageCount;
     @ManyToOne
     private Author author;
