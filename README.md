@@ -29,10 +29,20 @@ Or:
 ```
 mutation {
   newBook(
-    title: "Java: The Complete Reference, Tenth Edition", 
-    isbn: "1259589331", 
-    author: 1) {
-      id title
+    title: "Java: The Complete Reference, Tenth Edition"
+    isbn: "1259589331"
+    pageCount: 10
+    authorId: 1
+  ) {
+    id
+    isbn
+    pageCount
+    title
+    author {
+      firstName
+      id
+      lastName
+    }
   }
 }
 ```
