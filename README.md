@@ -11,7 +11,7 @@ To access the database, you can go to [http://localhost:8080/h2-console](http://
 
 Or go to [http://localhost:8080/graphiql](http://localhost:8080/graphiql) to start executing queries. For example:
 ```
-{
+query {
   findAllBooks {
     author {
       id
